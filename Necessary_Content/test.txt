@@ -1,0 +1,33 @@
+# ১. আরারিথমেটিক ও নেগেটিভ ইমিডিয়েট টেস্ট (Addition, Subtraction with negative immediate)
+addi $sp, $zero, 15
+addi $t1, $zero, 5
+subi $t2, $t1, -3
+add $t0, $t1, $t2
+
+# ২. লজিক্যাল ও শিফট অপারেশন টেস্ট (Logical OR, NOR, Shift Left)
+ori $t3, $zero, 1
+sll $t3, $t3, 2
+nor $t4, $t1, $zero
+
+# ৩. স্ট্যাক পয়েন্টার ও পুশ-পপ টেস্ট (Stack Management: Push and Pop)
+push $t1
+push $t2
+addi $t1, $zero, 0
+pop $t2
+pop $t1
+
+# ৪. ডাটা মেমোরি রাইট ও রিড টেস্ট (Store Word and Load Word)
+sw $t0, 5($zero)
+lw $t4, 5($zero)
+
+# ৫. ব্রাঞ্চিং ও ফরোয়ার্ড জাম্প টেস্ট (Branch if Equal and Jump Forward)
+addi $sp, $zero, 15
+sw $t0, 5($zero)
+lw $t4, 5($zero)
+beq $t4, $t0, label1
+addi $t0, $zero, 0
+j end
+label1:
+addi $t1, $zero, 1
+end:
+add $zero, $zero, $zero
